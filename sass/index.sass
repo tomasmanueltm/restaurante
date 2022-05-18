@@ -19,12 +19,19 @@
     width: $width
     padding: $padding
 
+@mixin grid($count : 2, $gap: 1rem)
+    display: grid
+    align-items: center
+    grid-template-columns: repeat($count,  1fr)
+    grid-gap: $gap
+
 *::-webkit-scrollbar 
-    width: 0px;
+    width: 0px
 *::-moz-scrollbar 
-    width: 0px;
+    width: 0px
 *::scrollbar 
-    width: 0px;
+    width: 0px
+var --x
 
 // estado padrao para todo elemento
 * 
@@ -32,11 +39,15 @@
     padding: 0px
     list-style: none
     font-family: Lato
-    line-height: 29px
+    // line-height: 20px
     font-style: normal
     text-decoration: none
     letter-spacing: .1rem
     box-sizing: border-box
+
+body
+    background: #f1f1f1
+
 
 .menu
     @include flex
@@ -149,6 +160,191 @@
                         top: 7px
                         left: 6.5px
 
-                    
+.catalogo
+    @include grid
+    @include largura     
+    // grid-template-columns: .6fr 1fr               
+
+    ._
+        .localizacao
+            display: block
+            padding: 0 0 5px
+            i
+                top: -2px
+                z-index: 2
+                display: inline
+                color: #ff043a
+                font-size: 1.3rem
+                position: relative
+            
+            span
+                strong
+                    font-family: Linotte        
+        h1
+            font-size: 3rem
+            font-family: Linotte  
+        p
+            line-height: 25px
+            font-size: 1.2rem
+
+            span
+                padding: 5px 0
+                display: block
+
+                a
+                    margin: 0 10px 0 0
+                    font-family: Linotte 
+
+                    i
+                        color: #ff043a
+                        font-size: 1.2rem
+                        transform: scale(1)
+                        transition: color .3s
+
+                    &:hover
+                        i
+                            color: #333
+                            transition: color .3s
+
+    .__
+        float: left
+        @include flex(flex-end, null, column)
+        height: 400px
+        position: relative
+        // 
+
+        .produtos
+            width: 400px
+            height: 100%
+            @include flex
+            border-radius: 50%
+            position: relative
+            justify-items: center 
+            justify-content: center
+            border: 2px dashed #ff0430
+            border-spacing: 40px
+
+            ul
+                left: 9.5rem
+                display: flex
+                position: relative
+                align-items: center
+                justify-items: center
+                justify-content: flex-start
+
+                li
+                    width: 90px
+                    height: 90px
+                    padding: .5rem
+                    cursor: pointer
+                    overflow: hidden
+                    position: absolute
+                    background: #ddd
+                    border-radius: 50%
+                    transform: rotate(calc(var(--x) * (360deg/6))) translateY(200px)
+
+                    &:hover
+                        overflow: visible
+                        // img
+                            // transition: scale .8s
+                            // transform: scale(1.5) translateY(0px)
+
+                    &.point 
+                        border: 2px solid #ff0430
+
+                    &:first-child
+                       transform: rotate(calc(5 * (360deg/-6))) translateY(200px)
+
+                       img
+                           transform: rotate(calc(5 * (360deg/6))) 
+
+                    img
+                        width: 100%
+                        height: 100%
+                        border: none
+                        outline: none
+                        object-fit: cover
+                        border-radius: 50%
+                        // transition: scale .8s rotate .3s
+                        transform: rotate(calc(var(--x) * (360deg/-6))) scale(1)
+
+                       
+
+            .produtoImg
+                left: 0
+                z-index: -1
+                width: 250px
+                height: 250px
+                margin: 0 auto
+                overflow: hidden
+                border-radius: 50%
+                position: relative
+                background: #ddd
+
+                img
+                    width: 100%
+                    height: 100%
+                    border: none
+                    outline: none
+                    padding: 1rem
+                    object-fit: cover
+                    border-radius: 50%
+
+
+        .rotulo
+            clear: both
+            width: 290px
+            display: block
+            bottom: -1.8rem
+            position: absolute
+            border-radius: 8px
+            padding: .8rem 1rem
+            background: #dddddd
+            transform: translateX(-16.5rem)
+
+            @include grid
+            grid-template-columns: 1fr .6fr
+
+            .sobre
+                float: left
+                p
+                    padding: .1rem 0
+                    font-size: 1rem
+                    color: #ff043a
+                    font-weight: 900
+                    font-family: Linotte
+
+                    strong
+                        font-size: 1.1rem
+                span
+                    padding: 30px 0
+                    font-size: .8rem
+                    font-family: Linotte
+            .comandos
+                .condicao
+                    @include flex(center, space-around)
+
+                    i
+                        color: #333
+                        background: #fff
+                        border-radius: 5px
+                        padding: .1rem .4rem
+                        font-family: Linotte
+                
+                span.adicionaProduto
+                    top: .3rem
+                    width: 80%
+                    color: #fff
+                    margin: 0 auto
+                    display: block
+                    cursor: pointer
+                    font-size: 1rem
+                    position: relative
+                    text-align: center
+                    border-radius: 3px
+                    padding: .1rem .2rem
+                    background: #ff043a
+
+
 
 

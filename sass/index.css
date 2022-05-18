@@ -26,11 +26,14 @@
   padding: 0px;
   list-style: none;
   font-family: Lato;
-  line-height: 29px;
   font-style: normal;
   text-decoration: none;
   letter-spacing: .1rem;
   box-sizing: border-box;
+}
+
+body {
+  background: #f1f1f1;
 }
 
 .menu {
@@ -171,4 +174,229 @@
 .menu .__ div.usuario .toggle i::after {
   top: 7px;
   left: 6.5px;
+}
+
+.catalogo {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  width: 100%;
+  padding: 2.5rem;
+}
+
+.catalogo ._ .localizacao {
+  display: block;
+  padding: 0 0 5px;
+}
+
+.catalogo ._ .localizacao i {
+  top: -2px;
+  z-index: 2;
+  display: inline;
+  color: #ff043a;
+  font-size: 1.3rem;
+  position: relative;
+}
+
+.catalogo ._ .localizacao span strong {
+  font-family: Linotte;
+}
+
+.catalogo ._ h1 {
+  font-size: 3rem;
+  font-family: Linotte;
+}
+
+.catalogo ._ p {
+  line-height: 25px;
+  font-size: 1.2rem;
+}
+
+.catalogo ._ p span {
+  padding: 5px 0;
+  display: block;
+}
+
+.catalogo ._ p span a {
+  margin: 0 10px 0 0;
+  font-family: Linotte;
+}
+
+.catalogo ._ p span a i {
+  color: #ff043a;
+  font-size: 1.2rem;
+  transform: scale(1);
+  transition: color .3s;
+}
+
+.catalogo ._ p span a:hover i {
+  color: #333;
+  transition: color .3s;
+}
+
+.catalogo .__ {
+  float: left;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  height: 400px;
+  position: relative;
+}
+
+.catalogo .__ .produtos {
+  width: 400px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  border-radius: 50%;
+  position: relative;
+  justify-items: center;
+  justify-content: center;
+  border: 2px dashed #ff0430;
+  border-spacing: 40px;
+}
+
+.catalogo .__ .produtos ul {
+  left: 9.5rem;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+  justify-content: flex-start;
+}
+
+.catalogo .__ .produtos ul li {
+  width: 90px;
+  height: 90px;
+  padding: .5rem;
+  cursor: pointer;
+  overflow: hidden;
+  position: absolute;
+  background: #ddd;
+  border-radius: 50%;
+  transform: rotate(calc(var(--x) * (360deg/6))) translateY(200px);
+}
+
+.catalogo .__ .produtos ul li:hover {
+  overflow: visible;
+}
+
+.catalogo .__ .produtos ul li:hover img {
+  transform: scale(1.5) translateY(0px);
+}
+
+.catalogo .__ .produtos ul li.point {
+  border: 2px solid #ff0430;
+}
+
+.catalogo .__ .produtos ul li:first-child {
+  transform: rotate(calc(5 * (360deg/-6))) translateY(200px);
+}
+
+.catalogo .__ .produtos ul li:first-child img {
+  transform: rotate(calc(5 * (360deg/6)));
+}
+
+.catalogo .__ .produtos ul li img {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  object-fit: cover;
+  border-radius: 50%;
+  transform: rotate(calc(var(--x) * (360deg/-6))) scale(1);
+}
+
+.catalogo .__ .produtos .produtoImg {
+  left: 0;
+  z-index: -1;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+  background: #ddd;
+}
+
+.catalogo .__ .produtos .produtoImg img {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.catalogo .__ .rotulo {
+  clear: both;
+  width: 290px;
+  display: block;
+  bottom: -1.8rem;
+  position: absolute;
+  border-radius: 8px;
+  padding: .8rem 1rem;
+  background: #dddddd;
+  transform: translateX(-16.5rem);
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  grid-template-columns: 1fr .6fr;
+}
+
+.catalogo .__ .rotulo .sobre {
+  float: left;
+}
+
+.catalogo .__ .rotulo .sobre p {
+  padding: .1rem 0;
+  font-size: 1rem;
+  color: #ff043a;
+  font-weight: 900;
+  font-family: Linotte;
+}
+
+.catalogo .__ .rotulo .sobre p strong {
+  font-size: 1.1rem;
+}
+
+.catalogo .__ .rotulo .sobre span {
+  padding: 30px 0;
+  font-size: .8rem;
+  font-family: Linotte;
+}
+
+.catalogo .__ .rotulo .comandos .condicao {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.catalogo .__ .rotulo .comandos .condicao i {
+  color: #333;
+  background: #fff;
+  border-radius: 5px;
+  padding: .1rem .4rem;
+  font-family: Linotte;
+}
+
+.catalogo .__ .rotulo .comandos span.adicionaProduto {
+  top: .3rem;
+  width: 80%;
+  color: #fff;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+  font-size: 1rem;
+  position: relative;
+  text-align: center;
+  border-radius: 3px;
+  padding: .1rem .2rem;
+  background: #ff043a;
 }
