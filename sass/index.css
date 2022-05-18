@@ -56,6 +56,36 @@ body {
   float: left;
 }
 
+@media (max-width: 765px) {
+  .menu ._ ul {
+    display: none;
+  }
+}
+
+.menu ._ ul.attr {
+  top: 0px;
+  left: 0px;
+  z-index: 8;
+  width: 50%;
+  display: none;
+  height: 100vh;
+  padding: 2rem;
+  position: fixed;
+  background: #ddd;
+}
+
+@media (max-width: 765px) {
+  .menu ._ ul.attr {
+    display: block;
+  }
+}
+
+.menu ._ ul.attr li {
+  clear: both;
+  display: block;
+  margin: 10px 0 15px;
+}
+
 .menu ._ ul li {
   margin: 0 1.5rem 0 0;
   display: inline-block;
@@ -80,6 +110,10 @@ body {
   border-radius: 5px;
   background: #ff043a;
   display: inline-block;
+}
+
+.menu .__ {
+  display: flex;
 }
 
 .menu .__ ul {
@@ -131,19 +165,31 @@ body {
   border: 2px solid #ff043a;
 }
 
+@media (max-width: 765px) {
+  .menu .__ div.usuario img {
+    display: none;
+  }
+}
+
 .menu .__ div.usuario .toggle {
-  top: 5px;
+  top: 0px;
   left: 2px;
   width: 35px;
   float: left;
   height: 30px;
   cursor: pointer;
-  position: absolute;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   display: none;
+}
+
+@media (max-width: 765px) {
+  .menu .__ div.usuario .toggle {
+    display: flex;
+  }
 }
 
 .menu .__ div.usuario .toggle i {
@@ -185,6 +231,19 @@ body {
   padding: 2.5rem;
 }
 
+@media (max-width: 765px) {
+  .catalogo {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 765px) {
+  .catalogo ._ {
+    text-align: center;
+    padding-bottom: 2.5rem;
+  }
+}
+
 .catalogo ._ .localizacao {
   display: block;
   padding: 0 0 5px;
@@ -208,6 +267,13 @@ body {
   font-family: Linotte;
 }
 
+@media (max-width: 765px) {
+  .catalogo ._ h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+}
+
 .catalogo ._ p {
   line-height: 25px;
   font-size: 1.2rem;
@@ -216,6 +282,12 @@ body {
 .catalogo ._ p span {
   padding: 5px 0;
   display: block;
+}
+
+@media (max-width: 765px) {
+  .catalogo ._ p span {
+    padding: 10px 0;
+  }
 }
 
 .catalogo ._ p span a {
@@ -237,11 +309,20 @@ body {
 
 .catalogo .__ {
   float: left;
+  height: 400px;
+  position: relative;
   display: flex;
   align-items: flex-end;
   flex-direction: column;
-  height: 400px;
-  position: relative;
+}
+
+@media (max-width: 765px) {
+  .catalogo .__ {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 
 .catalogo .__ .produtos {
@@ -339,6 +420,15 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
   grid-template-columns: 1fr .6fr;
+}
+
+@media (max-width: 765px) {
+  .catalogo .__ .rotulo {
+    width: 400px;
+    bottom: -8rem;
+    padding: 1rem;
+    transform: unset;
+  }
 }
 
 .catalogo .__ .rotulo .sobre {

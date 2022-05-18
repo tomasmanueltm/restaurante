@@ -25,13 +25,19 @@
     grid-template-columns: repeat($count,  1fr)
     grid-gap: $gap
 
+@mixin mobile
+    @media ( max-width:  765px)
+        @content     
+
+
 *::-webkit-scrollbar 
     width: 0px
 *::-moz-scrollbar 
     width: 0px
 *::scrollbar 
     width: 0px
-var --x
+
+
 
 // estado padrao para todo elemento
 * 
@@ -62,6 +68,31 @@ body
 
         ul
             float: left
+
+            @include mobile
+                display: none
+
+            &.attr
+                top: 0px
+                left: 0px
+                z-index: 8
+                width: 50%
+                display: none
+                height: 100vh
+                padding: 2rem
+                position: fixed
+                background: #ddd
+
+                @include mobile
+                    display: block
+
+
+
+                li
+                    clear: both
+                    display: block
+                    margin: 10px 0 15px
+
             li
                 margin: 0 1.5rem 0 0
                 display: inline-block
@@ -84,6 +115,8 @@ body
                     display: inline-block
 
     .__
+        display: flex
+
         ul
             float: left
             li
@@ -124,17 +157,23 @@ body
                 border-radius: 50%
                 vertical-align: baseline
                 border: 2px solid #ff043a
+
+                @include mobile
+                    display: none
             
             .toggle
-                top: 5px
+                top: 0px
                 left: 2px
                 width: 35px
                 float: left
                 height: 30px
                 cursor: pointer
-                position: absolute 
+                position: relative 
                 @include flex(center, center)
                 display: none
+
+                @include mobile
+                    display: flex
 
                 i
                     width: 95%
@@ -163,9 +202,15 @@ body
 .catalogo
     @include grid
     @include largura     
-    // grid-template-columns: .6fr 1fr               
+
+    @include mobile
+        grid-template-columns: 1fr               
 
     ._
+        @include mobile
+            text-align: center
+            padding-bottom: 2.5rem
+
         .localizacao
             display: block
             padding: 0 0 5px
@@ -183,6 +228,10 @@ body
         h1
             font-size: 3rem
             font-family: Linotte  
+
+            @include mobile
+                font-size: 2.5rem
+                text-align: center
         p
             line-height: 25px
             font-size: 1.2rem
@@ -190,6 +239,9 @@ body
             span
                 padding: 5px 0
                 display: block
+
+                @include mobile
+                    padding: 10px 0
 
                 a
                     margin: 0 10px 0 0
@@ -208,10 +260,14 @@ body
 
     .__
         float: left
-        @include flex(flex-end, null, column)
         height: 400px
         position: relative
-        // 
+        @include flex(flex-end, null, column)
+
+        @include mobile
+            @include flex(center, center, column)
+        // @include mobile-s
+        //     height: 350px
 
         .produtos
             width: 400px
@@ -224,6 +280,9 @@ body
             border: 2px dashed #ff0430
             border-spacing: 40px
 
+            // @include mobile-s
+            //     height: 350px
+
             ul
                 left: 9.5rem
                 display: flex
@@ -231,6 +290,11 @@ body
                 align-items: center
                 justify-items: center
                 justify-content: flex-start
+
+                
+
+                // @include mobile-s
+                //     left: 9rem
 
                 li
                     width: 90px
@@ -246,11 +310,18 @@ body
                     &.point 
                         border: 2px solid #ff0430
 
-                    &:first-child
-                       transform: rotate(calc(5 * (360deg/-6))) translateY(200px)
+                    // @include mobile-s
+                    //     width: 65px
+                    //     height: 65px
+                    //     transform: rotate(calc(var(--x) * (360deg/6))) translateY(175px)
 
-                       img
+                    &:first-child
+                        transform: rotate(calc(5 * (360deg/-6))) translateY(200px)
+                        
+                        img
                            transform: rotate(calc(5 * (360deg/6))) 
+                        // @include mobile-s
+                        //     transform: rotate(calc(5 * (360deg/-6))) translateY(175px)
 
                     img
                         width: 100%
@@ -293,6 +364,12 @@ body
             padding: .8rem 1rem
             background: #dddddd
             transform: translateX(-16.5rem)
+
+            @include mobile
+                width: 400px
+                bottom: -8rem
+                padding: 1rem
+                transform: unset
 
             @include grid
             grid-template-columns: 1fr .6fr
