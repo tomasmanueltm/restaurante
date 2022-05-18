@@ -134,12 +134,14 @@ body {
 .menu .__ ul li i span {
   top: 17.9px;
   right: 0px;
-  float: left;
+  width: 13px;
   color: #fff;
-  font-size: 7.2px;
+  height: 13px;
+  padding: 1.4px;
   font-weight: 900;
-  line-height: 13px;
-  padding: 1.5px 2px;
+  font-size: 7.2px;
+  line-height: 12px;
+  text-align: center;
   position: absolute;
   border-radius: 50%;
   font-family: Linotte;
@@ -425,17 +427,18 @@ body {
 @media (max-width: 765px) {
   .catalogo .__ .rotulo {
     width: 400px;
-    bottom: -8rem;
-    padding: 1rem;
+    bottom: -12rem;
     transform: unset;
+    padding: 1rem;
+    margin: 0 0 1rem;
   }
 }
 
-.catalogo .__ .rotulo .sobre {
+.catalogo .__ .rotulo .informacao {
   float: left;
 }
 
-.catalogo .__ .rotulo .sobre p {
+.catalogo .__ .rotulo .informacao p {
   padding: .1rem 0;
   font-size: 1rem;
   color: #ff043a;
@@ -443,24 +446,24 @@ body {
   font-family: Linotte;
 }
 
-.catalogo .__ .rotulo .sobre p strong {
+.catalogo .__ .rotulo .informacao p strong {
   font-size: 1.1rem;
 }
 
-.catalogo .__ .rotulo .sobre span {
+.catalogo .__ .rotulo .informacao span {
   padding: 30px 0;
   font-size: .8rem;
   font-family: Linotte;
 }
 
-.catalogo .__ .rotulo .comandos .condicao {
+.catalogo .__ .rotulo ._ .inputs {
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: row;
 }
 
-.catalogo .__ .rotulo .comandos .condicao i {
+.catalogo .__ .rotulo ._ .inputs i {
   color: #333;
   cursor: pointer;
   background: #fff;
@@ -469,7 +472,7 @@ body {
   font-family: Linotte;
 }
 
-.catalogo .__ .rotulo .comandos span.adicionaProduto {
+.catalogo .__ .rotulo ._ span.input_carro {
   top: .3rem;
   width: 80%;
   color: #fff;
