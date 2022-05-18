@@ -280,14 +280,6 @@ body {
   transform: rotate(calc(var(--x) * (360deg/6))) translateY(200px);
 }
 
-.catalogo .__ .produtos ul li:hover {
-  overflow: visible;
-}
-
-.catalogo .__ .produtos ul li:hover img {
-  transform: scale(1.5) translateY(0px);
-}
-
 .catalogo .__ .produtos ul li.point {
   border: 2px solid #ff0430;
 }
@@ -307,7 +299,7 @@ body {
   outline: none;
   object-fit: cover;
   border-radius: 50%;
-  transform: rotate(calc(var(--x) * (360deg/-6))) scale(1);
+  transform: rotate(calc(var(--x) * (360deg/-6)));
 }
 
 .catalogo .__ .produtos .produtoImg {
@@ -380,6 +372,7 @@ body {
 
 .catalogo .__ .rotulo .comandos .condicao i {
   color: #333;
+  cursor: pointer;
   background: #fff;
   border-radius: 5px;
   padding: .1rem .4rem;

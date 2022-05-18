@@ -243,12 +243,6 @@ body
                     border-radius: 50%
                     transform: rotate(calc(var(--x) * (360deg/6))) translateY(200px)
 
-                    &:hover
-                        overflow: visible
-                        // img
-                            // transition: scale .8s
-                            // transform: scale(1.5) translateY(0px)
-
                     &.point 
                         border: 2px solid #ff0430
 
@@ -266,9 +260,7 @@ body
                         object-fit: cover
                         border-radius: 50%
                         // transition: scale .8s rotate .3s
-                        transform: rotate(calc(var(--x) * (360deg/-6))) scale(1)
-
-                       
+                        transform: rotate(calc(var(--x) * (360deg/-6)))
 
             .produtoImg
                 left: 0
@@ -326,6 +318,7 @@ body
 
                     i
                         color: #333
+                        cursor: pointer
                         background: #fff
                         border-radius: 5px
                         padding: .1rem .4rem
