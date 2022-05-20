@@ -338,8 +338,16 @@ body {
   position: relative;
   justify-items: center;
   justify-content: center;
+}
+
+.catalogo .__ .produtos::before {
+  content: "";
+  height: 100%;
+  width: 400px;
+  position: absolute;
+  border-radius: 50%;
   border: 2px dashed #ff0430;
-  border-spacing: 40px;
+  animation: girar 50s linear infinite;
 }
 
 .catalogo .__ .produtos ul {
@@ -485,4 +493,13 @@ body {
   border-radius: 3px;
   padding: .1rem .2rem;
   background: #ff043a;
+}
+
+@keyframes girar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -277,8 +277,17 @@ body
             position: relative
             justify-items: center 
             justify-content: center
-            border: 2px dashed #ff0430
-            border-spacing: 40px
+            
+
+            &::before
+                content: ""
+                height: 100%
+                width: 400px
+                position: absolute
+                // background: orange
+                border-radius: 50%
+                border: 2px dashed #ff0430
+                animation: girar 50s linear infinite
 
 
             ul
@@ -406,3 +415,9 @@ body
 
 
 
+@keyframes girar
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
+        
