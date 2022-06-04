@@ -1,0 +1,7 @@
+
+#ignorar arquivos sass
+*.sass
+*.min.css
+
+.sass
+.min.css
